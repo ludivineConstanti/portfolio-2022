@@ -8,13 +8,19 @@
 import * as React from "react"
 
 import "./layout.css"
+import GUI from "./GUI"
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[]
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return <main>{children}</main>
+  return (
+    <main>
+      <GUI />
+      {children}
+    </main>
+  )
 }
 
 export default Layout
