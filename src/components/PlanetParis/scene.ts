@@ -2,26 +2,14 @@ import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 // imports for postprocessing
-import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js"
+
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js"
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js"
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js"
-
-import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader.js"
-import { DotScreenShader } from "three/examples/jsm/shaders/DotScreenShader.js"
-import { BleachBypassShader } from "three/examples/jsm/shaders/BleachBypassShader.js"
-import { ColorifyShader } from "three/examples/jsm/shaders/ColorifyShader.js"
-import { HorizontalBlurShader } from "three/examples/jsm/shaders/HorizontalBlurShader.js"
-import { VerticalBlurShader } from "three/examples/jsm/shaders/VerticalBlurShader.js"
-import { SepiaShader } from "three/examples/jsm/shaders/SepiaShader.js"
-import { VignetteShader } from "three/examples/jsm/shaders/VignetteShader.js"
-import { GammaCorrectionShader } from "three/examples/jsm/shaders/GammaCorrectionShader.js"
-import { PixelShader } from "three/examples/jsm/shaders/PixelShader.js"
 
 let scene: THREE.Scene
 export let camera: THREE.PerspectiveCamera
 let renderer: THREE.WebGLRenderer
-let composer: EffectComposer
+export let composer: EffectComposer
 let group: THREE.Object3D
 let HEIGHT: number
 let WIDTH: number
@@ -38,16 +26,6 @@ export const settings = {
   },
   speed: 1,
 }
-// postprocessing effects
-export let effectUnrealBloom: UnrealBloomPass
-export let effectDot: ShaderPass
-export let effectRGBShift: ShaderPass
-export let effectBleach: ShaderPass
-export let effectSepia: ShaderPass
-export let effectVignette: ShaderPass
-export let effectHorizontalBlur: ShaderPass
-export let effectVerticalBlur: ShaderPass
-export let effectPixel: ShaderPass
 
 export const init = (container: HTMLElement) => {
   // set up the scene, the camera and the renderer
@@ -73,54 +51,8 @@ const addPostProcessing = () => {
   composer = new EffectComposer(renderer)
   composer.addPass(new RenderPass(scene, camera))
 
-  effectUnrealBloom = new UnrealBloomPass(
-    new THREE.Vector2(window.innerWidth, window.innerHeight),
-    1.5,
-    0.4,
-    0.85
-  )
-  composer.addPass(effectUnrealBloom)
-
-  /* effectDot = new ShaderPass(DotScreenShader)
-  composer.addPass(effectDot) */
-
-  effectRGBShift = new ShaderPass(RGBShiftShader)
-  effectRGBShift.uniforms["amount"].value = 0
-  composer.addPass(effectRGBShift)
-
-  const shaderBleach = BleachBypassShader
-  effectBleach = new ShaderPass(shaderBleach)
-  effectBleach.uniforms["opacity"].value = 0
-  composer.addPass(effectBleach)
-
-  const shaderSepia = SepiaShader
-  effectSepia = new ShaderPass(shaderSepia)
-  effectSepia.uniforms["amount"].value = 0
-  composer.addPass(effectSepia)
-
-  const shaderVignette = VignetteShader
-  effectVignette = new ShaderPass(shaderVignette)
-  effectVignette.uniforms["offset"].value = 0
-  effectVignette.uniforms["darkness"].value = 0
-  composer.addPass(effectVignette)
-
-  effectHorizontalBlur = new ShaderPass(HorizontalBlurShader)
-  effectHorizontalBlur.uniforms["h"].value = 0
-  composer.addPass(effectHorizontalBlur)
-
-  effectVerticalBlur = new ShaderPass(VerticalBlurShader)
-  effectVerticalBlur.uniforms["v"].value = 0
-  composer.addPass(effectVerticalBlur)
-
-  effectPixel = new ShaderPass(PixelShader)
-  effectPixel.uniforms["resolution"].value = new THREE.Vector2(
-    window.innerWidth,
-    window.innerHeight
-  )
-  effectPixel.uniforms["resolution"].value.multiplyScalar(
-    window.devicePixelRatio
-  )
-  composer.addPass(effectPixel)
+  // TO DO: need to add the render passes that need to know the screen pixel resolution to the handleWindowResize function
+  // + composer should also be updated on resize
 }
 
 const createScene = (container: HTMLElement) => {

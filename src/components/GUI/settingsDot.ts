@@ -1,8 +1,25 @@
 import * as THREE from "three"
-import { effectDot } from "../PlanetParis/scene"
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js"
+import { DotScreenShader } from "three/examples/jsm/shaders/DotScreenShader.js"
+
+import { composer } from "../PlanetParis/scene"
+
+const effectDot = new ShaderPass(DotScreenShader)
 
 export default {
-  ["Scale"]: {
+  ["Enable Dot effect"]: {
+    value: false,
+    onChange: (v: boolean) => {
+      if (composer) {
+        if (v === true) {
+          composer.addPass(effectDot)
+        } else {
+          composer.removePass(effectDot)
+        }
+      }
+    },
+  },
+  ["Scale dot"]: {
     value: 0,
     min: 0,
     max: 10,
@@ -12,7 +29,7 @@ export default {
       }
     },
   },
-  ["Size"]: {
+  ["Size dot"]: {
     value: 0,
     min: 0,
     max: 10,
@@ -22,7 +39,7 @@ export default {
       }
     },
   },
-  ["Angle"]: {
+  ["Angle dot"]: {
     value: 0,
     min: 0,
     max: 10,
