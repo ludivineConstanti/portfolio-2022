@@ -7,18 +7,22 @@
 
 import * as React from "react"
 
-import "./layout.css"
+import GlobalStyle from "./globalStyle"
 import GUI from "./GUI"
+import Menu from "./Menu"
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[]
+  canScroll?: boolean
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, canScroll = true }: LayoutProps) => {
   return (
     <main>
+      <GlobalStyle canscroll={canScroll} />
       <GUI />
       {children}
+      <Menu />
     </main>
   )
 }

@@ -26,6 +26,7 @@ export const settings = {
   },
   speed: 1,
 }
+let currentTime = Date.now()
 
 export const init = (container: HTMLElement) => {
   // set up the scene, the camera and the renderer
@@ -86,11 +87,13 @@ const createScene = (container: HTMLElement) => {
   renderer = new THREE.WebGLRenderer({
     canvas: container,
     // Allow transparency
-    alpha: true,
+    // alpha: true,
     // Activate the anti-aliasing; this is less performant
     // (better to not use it for high poly complex projects)
     antialias: true,
   })
+
+  renderer.setClearColor(0x002a51, 1)
 
   // Define the size of the renderer; in this case,
   // it will fill the entire screen
@@ -170,8 +173,11 @@ const createModel = () => {
 }
 
 const loop = () => {
-  group.rotation.y -= 0.0007 * settings.speed
-  group.rotation.x -= 0.0012 * settings.speed
+  const deltaTime = Date.now() - currentTime
+  currentTime = Date.now()
+
+  group.rotation.y -= 0.00001 * settings.speed * deltaTime
+  group.rotation.x -= 0.00005 * settings.speed * deltaTime
 
   // renderer.render(scene, camera)
 

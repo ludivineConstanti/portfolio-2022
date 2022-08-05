@@ -81,30 +81,30 @@ const GUI = () => {
     ["Unreal Bloom effect"]: folder(settingsUnrealBloom, defaultOptions),
     ["Dot effect"]: folder(settingsDot, defaultOptions),
     ["RGB Shift"]: folder(settingsRGBShift, defaultOptions),
-    ["Bleach effect"]: folder(settingsBleach, defaultOptions),
-    ["Sepia effect"]: folder(settingsSepia, defaultOptions),
-    ["Vignette effect"]: folder(settingsVignette, defaultOptions),
+    // ["Bleach effect"]: folder(settingsBleach, defaultOptions),
+    // ["Sepia effect"]: folder(settingsSepia, defaultOptions),
+    // ["Vignette effect"]: folder(settingsVignette, defaultOptions),
     ["Horizontal blur"]: folder(settingsHorizontalBlur, defaultOptions),
     ["Vertical blur"]: folder(settingsVerticalBlur, defaultOptions),
     ["Pixel effect"]: folder(settingsPixel, defaultOptions),
     ["Hue Saturation"]: folder(settingsHueSaturation, defaultOptions),
     ["Kaleido"]: folder(settingsKaleido, defaultOptions),
-    ["Triangle blur effect"]: folder(settingsTriangleBlur, defaultOptions),
+    // ["Triangle blur effect"]: folder(settingsTriangleBlur, defaultOptions),
     ["Brightness Contrast effect"]: folder(
       settingsBrightnessContrast,
       defaultOptions
     ),
-    ["Halftone effect"]: folder(settingsHalftone, defaultOptions),
-    ["Colorify effect"]: folder(settingsColorify, defaultOptions),
+    // ["Halftone effect"]: folder(settingsHalftone, defaultOptions),
+    // ["Colorify effect"]: folder(settingsColorify, defaultOptions),
     ["Luminosity effect"]: folder(settingsLuminosity, defaultOptions),
-    ["Luminosity High Pass effect"]: folder(
+    /* ["Luminosity High Pass effect"]: folder(
       settingsLuminosityHighPass,
       defaultOptions
-    ),
-    ["Subsurface Scattering effect"]: folder(
+    ), */
+    /* ["Subsurface Scattering effect"]: folder(
       settingsSubsurfaceScattering,
       defaultOptions
-    ),
+    ), */
     ["Outline effect"]: folder(settingsOutlineSobel, defaultOptions),
   })
 
