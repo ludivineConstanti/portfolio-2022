@@ -5,7 +5,7 @@ export const links = {
 }
 
 export enum colors {
-  blue = "#002A51",
+  blue = "#0E184F",
   white = "#FFFFFF",
 }
 

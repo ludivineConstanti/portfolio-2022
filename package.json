@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@react-three/drei": "^9.23.8",
+    "@react-three/fiber": "^8.6.0",
     "gatsby": "^4.19.2",
     "gatsby-plugin-gatsby-cloud": "^4.19.0",
     "gatsby-plugin-image": "^2.19.0",
