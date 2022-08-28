@@ -8,11 +8,8 @@ import { useFrame } from "@react-three/fiber"
 
 import {
   MaterialBlue,
-  MaterialGlassBlueLight,
-  MaterialGlassBlue,
-  MaterialGlassBlueDark,
-  MaterialGlassWhite,
-  MaterialGreenLight,
+  MaterialGlass,
+  MaterialGreen,
   MaterialPink,
   MaterialWater,
   MaterialWhite,
@@ -37,6 +34,7 @@ const Paris = () => {
       dispose={null}
       ref={ref}
       rotation={[Math.PI, 0, Math.PI / 2]}
+      position={[-3, -2, 0]}
       scale={2}
     >
       <mesh geometry={nodes.Sphere006.geometry}>
@@ -49,22 +47,22 @@ const Paris = () => {
         <MaterialBlue />
       </mesh>
       <mesh geometry={nodes.Sphere006_3.geometry}>
-        <MaterialGreenLight />
+        <MaterialGreen />
       </mesh>
       <mesh geometry={nodes.Sphere006_4.geometry}>
         <MaterialPink />
       </mesh>
       <mesh geometry={nodes.Sphere006_5.geometry}>
-        <MaterialGlassBlueLight />
+        <MaterialGlass.blueLight />
       </mesh>
       <mesh geometry={nodes.Sphere006_6.geometry}>
-        <MaterialGlassWhite />
+        <MaterialGlass.white />
       </mesh>
       <mesh geometry={nodes.Sphere006_7.geometry}>
-        <MaterialGlassBlueDark />
+        <MaterialGlass.blueDark />
       </mesh>
       <mesh geometry={nodes.Sphere006_8.geometry}>
-        <MaterialGlassBlue />
+        <MaterialGlass.blue />
       </mesh>
     </group>
   )

@@ -3,7 +3,7 @@ import { Texture } from "three"
 
 interface MatcapProps {
   matcap: Texture
-  color: string
+  color?: string
 }
 
 export const Matcap = ({ matcap, color }: MatcapProps) => {

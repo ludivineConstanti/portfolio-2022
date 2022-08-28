@@ -6,7 +6,7 @@ import React, { useRef } from "react"
 import { useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 
-import { MaterialGreenLight, MaterialRed, MaterialWater } from "../materials"
+import { MaterialGreen, MaterialRed, MaterialWater } from "../materials"
 
 const Miyajima = () => {
   const { nodes } = useGLTF("/planets/miyajima.gltf")
@@ -15,21 +15,21 @@ const Miyajima = () => {
 
   useFrame(() => {
     if (ref) {
-      const x = ref.current.rotation.x + 0.001
+      const x = ref.current.rotation.x + 0.0005
       const y = ref.current.rotation.y + 0.002
-      const z = ref.current.rotation.z + 0.003
+      const z = ref.current.rotation.z + 0.0005
       ref.current.rotation.set(x, y, z)
     }
   })
   return (
-    <group dispose={null} scale={2} position={[-10, 5, -4]} ref={ref}>
-      <mesh geometry={nodes.Cube034.geometry}>
+    <group dispose={null} scale={2} position={[-12, 5, -4]} ref={ref}>
+      <mesh geometry={nodes.water.geometry}>
         <MaterialWater />
       </mesh>
-      <mesh geometry={nodes.Cube004.geometry}>
-        <MaterialGreenLight />
+      <mesh geometry={nodes.green.geometry}>
+        <MaterialGreen />
       </mesh>
-      <mesh geometry={nodes.Cube005.geometry}>
+      <mesh geometry={nodes.red.geometry}>
         <MaterialRed />
       </mesh>
     </group>

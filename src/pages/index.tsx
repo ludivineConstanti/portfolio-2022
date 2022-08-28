@@ -1,10 +1,11 @@
 import React, { Suspense } from "react"
 import styled from "styled-components"
 import { Canvas } from "@react-three/fiber"
+import { NoToneMapping } from "three"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Paris, Miyajima } from "../components/planets"
+import { Paris, Miyajima, Sintra, Berlin } from "../components/planets"
 import Project from "../components/Project"
 import { zIndex, colors } from "../models"
 
@@ -19,22 +20,28 @@ const CanvasWrapper = styled.div`
 const IntroWrapper = styled.div`
   z-index: ${zIndex.content};
   position: relative;
-  height: 100vh;
-  width: 40vw;
-  margin: 0 auto;
+  height: 30vw;
+  width: 30vw;
+  margin-left: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: ${colors.white};
+  padding: 50px;
+  // background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 500px;
+  margin-top: 100px;
 `
 
 const Title = styled.h1`
-  font-size: 150px;
+  font-size: 75px;
+  margin-bottom: 15px;
 `
 
 const Text = styled.p`
-  font-size: 25px;
+  font-size: 20px;
   // text-align: center;
 `
 
@@ -43,7 +50,8 @@ const IndexPage = () => (
     <Seo title="Home" />
     {/* <BackgroundColor /> */}
     <CanvasWrapper>
-      <Canvas>
+      <Canvas gl={{ antialias: true, toneMapping: NoToneMapping }} linear>
+        <Suspense fallback={null}>{/* <Sintra /> */}</Suspense>
         <Suspense fallback={null}>
           <Paris />
         </Suspense>

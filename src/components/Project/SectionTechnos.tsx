@@ -57,7 +57,7 @@ const TechnosWrapper = styled.div`
 const SectionTechnos = () => {
   return (
     <Wrapper>
-      <Title>technos used:</Title>
+      <Title>tech stack:</Title>
       <TechnosWrapper>
         <TechnoIcon text="React" icon={<IconReact />} />
         <TechnoIcon text="Typescript" icon={<IconReact />} />
