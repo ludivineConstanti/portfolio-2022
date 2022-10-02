@@ -1,21 +1,11 @@
-import React, { Suspense } from "react"
+import React from "react"
 import styled from "styled-components"
-import { Canvas } from "@react-three/fiber"
-import { NoToneMapping } from "three"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Paris, Miyajima, Sintra, Berlin } from "../components/planets"
+import Canvas from "../components/canvas"
 import Project from "../components/Project"
 import { zIndex, colors } from "../models"
-
-const CanvasWrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: ${colors.blue};
-  position: fixed;
-  top: 0;
-`
 
 const IntroWrapper = styled.div`
   z-index: ${zIndex.content};
@@ -49,17 +39,7 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     {/* <BackgroundColor /> */}
-    <CanvasWrapper>
-      <Canvas gl={{ antialias: true, toneMapping: NoToneMapping }} linear>
-        <Suspense fallback={null}>{/* <Sintra /> */}</Suspense>
-        <Suspense fallback={null}>
-          <Paris />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Miyajima />
-        </Suspense>
-      </Canvas>
-    </CanvasWrapper>
+    <Canvas />
     <IntroWrapper>
       <Title>Welcome!</Title>
       <Text>
