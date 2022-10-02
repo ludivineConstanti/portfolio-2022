@@ -2967,6 +2967,32 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
+"@theatre/core@0.5":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@theatre/core/-/core-0.5.0.tgz#a7c1fbd658d514432e637c31fa44da687fc7a53c"
+  integrity sha512-IW3Ym3mPL+u6+Ectn36Ku7oXEsGRXESZ6lX6EhG+LFSs4cibMRnDgmuUIs7PMHBa1a5RBK7Y91SdjHhTy4D1rg==
+  dependencies:
+    "@theatre/dataverse" "0.5.0"
+
+"@theatre/dataverse@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@theatre/dataverse/-/dataverse-0.5.0.tgz#8a273bf16083fd26f205dca2e4fac2cf2005d41f"
+  integrity sha512-wSqxrfIf9gXmZ3zbmWH1ZLLjDU8rRJ15aAK1hszZUcW5riNd1VFeGROh5+BGF3RZXtWwYIxsyQ7DwS+GbRgnaA==
+  dependencies:
+    lodash-es "^4.17.21"
+
+"@theatre/r3f@0.5":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@theatre/r3f/-/r3f-0.5.0.tgz#039f9ee9522a302793bdc8c45dd743d9a068e65b"
+  integrity sha512-C6A5hy8Hr8w95SNax1Fhy8gmSQQBNwPrQtJy0Nec5A+ZffL34nulW3GwEQM05rvJ4ly4RBT/pzmya/ZmFbqpQw==
+
+"@theatre/studio@0.5":
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/@theatre/studio/-/studio-0.5.0.tgz#153f54b5468d926c3c48af1c3b3b1fbaeb9188bf"
+  integrity sha512-4Uvm8L/C9rJptz/7DvRp0fP10GkMNV5XVlgYgYELpDgxK2l0m9L68ZPg1wYCDLOqDCBKIs/LKzm0TMW/DAj8Iw==
+  dependencies:
+    "@theatre/dataverse" "0.5.0"
+
 "@tokenizer/token@^0.3.0":
   version "0.3.0"
   resolved "https://registry.npmjs.org/@tokenizer/token/-/token-0.3.0.tgz#fe98a93fe789247e998c75e74e9c7c63217aa276"
@@ -3323,10 +3349,10 @@
     "@types/react" "*"
     csstype "^3.0.2"
 
-"@types/three@^0.143.0":
-  version "0.143.0"
-  resolved "https://registry.npmjs.org/@types/three/-/three-0.143.0.tgz#686f1221c4c89d797713f0533d2f129afcc3572d"
-  integrity sha512-c5PonXOt8xk5q4ygmyjOX4Ec+FA7gwfdcMT/PveE9xrJs/0DDcf2lJkWrhEcmvx2ZefQCQBcogABnGqB0P4OsA==
+"@types/three@^0.144.0":
+  version "0.144.0"
+  resolved "https://registry.npmjs.org/@types/three/-/three-0.144.0.tgz#a154f40122dbc3668c5424a5373f3965c6564557"
+  integrity sha512-psvEs6q5rLN50jUYZ3D4pZMfxTbdt3A243blt0my7/NcL6chaCZpHe2csbCtx0SOD9fI/XnF3wnVUAYZGqCSYg==
   dependencies:
     "@types/webxr" "*"
 
@@ -10757,6 +10783,11 @@ lockfile@^1.0:
   integrity sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA==
   dependencies:
     signal-exit "^3.0.2"
+
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
