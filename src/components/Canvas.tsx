@@ -1,15 +1,16 @@
-import React, { useEffect, Suspense, useState } from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Canvas } from "@react-three/fiber"
 import { NoToneMapping } from "three"
 import * as core from "@theatre/core"
 import studio from "@theatre/studio"
 import extension from "@theatre/r3f/dist/extension"
-import { editable as e, SheetProvider } from "@theatre/r3f"
+import { SheetProvider } from "@theatre/r3f"
 
 import Composer from "./composer"
-import { Paris, Miyajima, Sintra, Berlin } from "../components/planets"
+import PlanetsAndStars from "./PlanetsAndStars"
 import { colors } from "../models"
+import Camera from "./camera"
 
 const demoSheet = core.getProject("Demo Project").sheet("Demo Sheet")
 
@@ -28,6 +29,7 @@ const CanvasComponent = () => {
       saturation: 0,
     },
   })
+
   useEffect(() => {
     studio.initialize()
 
@@ -57,13 +59,8 @@ const CanvasComponent = () => {
       >
         <SheetProvider sheet={demoSheet}>
           <Composer shadersState={shaderState} />
-          <Suspense fallback={null}>{/* <Sintra /> */}</Suspense>
-          <Suspense fallback={null}>
-            <Paris />
-          </Suspense>
-          <Suspense fallback={null}>
-            <Miyajima />
-          </Suspense>
+          <Camera />
+          <PlanetsAndStars />
         </SheetProvider>
       </Canvas>
     </Wrapper>

@@ -13,7 +13,7 @@ const Layout = ({ children, canScroll = true }: LayoutProps) => {
     <main>
       <GlobalStyle canscroll={canScroll} />
       {children}
-      <Menu />
+      {/* <Menu /> */}
     </main>
   )
 }

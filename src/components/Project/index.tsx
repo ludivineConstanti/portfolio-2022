@@ -1,41 +1,28 @@
 import React from "react"
 import styled from "styled-components"
 
-import { IconGithub } from "../icons"
-import { colors, zIndex } from "../../models"
+import { colors, zIndex, h1FonstStyle } from "../../models"
 import SectionTechnos from "./SectionTechnos"
 import SectionLinks from "./SectionLinks"
+import { BackgroundColor } from "../basics"
+
+const StyledBackgroundColor = styled(BackgroundColor)`
+  height: 25vh;
+`
 
 const Wrapper = styled.div`
   position: relative;
   z-index: ${zIndex.content};
   color: ${colors.white};
   width: 50vw;
-  margin: 75vh auto;
-  background-color: rgba(0, 0, 0, 0.15);
-  padding: 80px;
-  border-radius: 40px;
-  // padding: 50px;
-  filter: drop-shadow(0px 0px 30px ${colors.blue});
+  margin-left: 60vw;
+  width: 40vw;
+  // background-color: ${colors.blue};
+  border-left: 5px solid ${colors.white};
 `
 
 const Title = styled.h1`
-  font-size: 120px;
-  // display: inline;
-  padding-bottom: 20px;
-  // margin-bottom: 40px;
-`
-
-const BackgroundColor = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: ${colors.blue};
-  opacity: 0.35;
-  z-index: -1;
-  border-radius: 40px;
+  ${h1FonstStyle}
 `
 
 interface PropjectProps {
@@ -46,10 +33,11 @@ interface PropjectProps {
 const Project = ({ title, text }: PropjectProps) => {
   return (
     <Wrapper>
-      <BackgroundColor />
+      <StyledBackgroundColor />
       <Title>{title}</Title>
       <SectionLinks text={text} />
       <SectionTechnos />
+      <StyledBackgroundColor />
     </Wrapper>
   )
 }

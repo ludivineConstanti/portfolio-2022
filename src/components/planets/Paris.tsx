@@ -30,7 +30,6 @@ const Paris = () => {
     <e.group
       dispose={null}
       ref={ref}
-      rotation={[Math.PI, 0, Math.PI / 2]}
       position={[-3, -2, 0]}
       scale={2}
       theatreKey="Planet Paris"

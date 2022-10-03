@@ -49,9 +49,8 @@ const Title = styled.h2`
 `
 
 const TechnosWrapper = styled.div`
-  border: 3px solid ${colors.white};
-  display: inline;
-  width: auto;
+  border: 5px solid ${colors.white};
+  display: flex;
 `
 
 const SectionTechnos = () => {

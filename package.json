@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@react-three/drei": "^9.23.8",
     "@react-three/fiber": "^8.6.0",
     "@theatre/core": "0.5",

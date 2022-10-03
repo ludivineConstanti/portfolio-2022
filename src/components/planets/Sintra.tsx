@@ -31,7 +31,7 @@ const Sintra = () => {
     }
   })
   return (
-    <group dispose={null} scale={2} ref={ref} theatreKey="Planet Sintra">
+    <e.group dispose={null} scale={2} ref={ref} theatreKey="Planet Sintra">
       <mesh geometry={nodes.glassDarkBlue.geometry}>
         <MaterialGlass.blueDark />
       </mesh>
@@ -62,7 +62,7 @@ const Sintra = () => {
       <mesh geometry={nodes.red.geometry}>
         <MaterialRed />
       </mesh>
-    </group>
+    </e.group>
   )
 }
 
