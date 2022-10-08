@@ -1,21 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 
-import { IconReact } from "../icons"
-import { colors } from "../../models"
+import { IconReact, IconTypescript, IconRedux, IconGatsby } from "../icons"
+import { colors, buttonFontStyle } from "../../models"
 
 const TechnoWrapper = styled.div`
-  height: 65px;
-  border-right: 3px solid ${colors.white};
+  ${buttonFontStyle}
+  height: 40px;
+  border: 2.5px solid ${colors.white};
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   padding: 15px 15px;
   flex-shrink: 1;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 4px;
-  // margin-right: 15px;
+  margin: 10px;
 `
 
 const TechnoName = styled.p`
@@ -28,17 +26,13 @@ interface TechnoIconProps {
 }
 
 const TechnoIcon = ({ text, icon }: TechnoIconProps) => {
-  return (
-    <TechnoWrapper>
-      {icon}
-      <TechnoName>{text}</TechnoName>
-    </TechnoWrapper>
-  )
+  return <TechnoWrapper>{icon}</TechnoWrapper>
 }
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 40px;
 `
 
 const Title = styled.h2`
@@ -49,7 +43,6 @@ const Title = styled.h2`
 `
 
 const TechnosWrapper = styled.div`
-  border: 5px solid ${colors.white};
   display: flex;
 `
 
@@ -59,9 +52,10 @@ const SectionTechnos = () => {
       <Title>tech stack:</Title>
       <TechnosWrapper>
         <TechnoIcon text="React" icon={<IconReact />} />
-        <TechnoIcon text="Typescript" icon={<IconReact />} />
-        <TechnoIcon text="Gatsby" icon={<IconReact />} />
-        <TechnoIcon text="Redux" icon={<IconReact />} />
+        <TechnoIcon text="Typescript" icon={<IconTypescript />} />
+        <TechnoIcon text="Gatsby" icon={<IconGatsby />} />
+        <TechnoIcon text="Redux" icon={<IconRedux />} />
+        <TechnoIcon text="" icon={<IconRedux />} />
       </TechnosWrapper>
     </Wrapper>
   )

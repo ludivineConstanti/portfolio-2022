@@ -23,22 +23,18 @@ const Miyajima = () => {
     }
   })
   return (
-    <e.group
-      dispose={null}
-      scale={2}
-      position={[-12, 5, -4]}
-      ref={ref}
-      theatreKey="Planet Miyajima"
-    >
-      <mesh geometry={nodes.water.geometry}>
-        <MaterialWater />
-      </mesh>
-      <mesh geometry={nodes.green.geometry}>
-        <MaterialGreen />
-      </mesh>
-      <mesh geometry={nodes.red.geometry}>
-        <MaterialRed />
-      </mesh>
+    <e.group dispose={null} theatreKey="Planet Miyajima">
+      <group scale={15} position={[-100, 175, 40]} ref={ref}>
+        <mesh geometry={nodes.water.geometry}>
+          <MaterialWater />
+        </mesh>
+        <mesh geometry={nodes.green.geometry}>
+          <MaterialGreen />
+        </mesh>
+        <mesh geometry={nodes.red.geometry}>
+          <MaterialRed />
+        </mesh>
+      </group>
     </e.group>
   )
 }

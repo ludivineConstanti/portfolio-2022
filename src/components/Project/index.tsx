@@ -1,24 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 
-import { colors, zIndex, h1FonstStyle } from "../../models"
+import { h1FonstStyle } from "../../models"
 import SectionTechnos from "./SectionTechnos"
 import SectionLinks from "./SectionLinks"
-import { BackgroundColor } from "../basics"
+import { BackgroundColor, Wrapper } from "../basics"
 
 const StyledBackgroundColor = styled(BackgroundColor)`
-  height: 25vh;
-`
-
-const Wrapper = styled.div`
-  position: relative;
-  z-index: ${zIndex.content};
-  color: ${colors.white};
-  width: 50vw;
-  margin-left: 60vw;
-  width: 40vw;
-  // background-color: ${colors.blue};
-  border-left: 5px solid ${colors.white};
+  height: 50vh;
 `
 
 const Title = styled.h1`
@@ -28,11 +17,12 @@ const Title = styled.h1`
 interface PropjectProps {
   title: string
   text: string
+  setRef: React.Dispatch<any>
 }
 
-const Project = ({ title, text }: PropjectProps) => {
+const Project = ({ title, text, setRef }: PropjectProps) => {
   return (
-    <Wrapper>
+    <Wrapper ref={e => setRef(e)}>
       <StyledBackgroundColor />
       <Title>{title}</Title>
       <SectionLinks text={text} />

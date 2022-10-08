@@ -12,7 +12,7 @@ const PlanetsAndStars = () => {
   const [scrollPositionY, setScrollPositionY] = useState(0)
 
   useScrollPosition(({ prevPos, currPos }) => {
-    setScrollPositionY(currPos.y * -0.02)
+    setScrollPositionY(currPos.y * -0.005)
   })
 
   const groupRef: null | { current: THREE.Mesh } = useRef()

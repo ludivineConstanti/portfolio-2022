@@ -2,13 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 import { IconGithub } from "../icons"
-import { colors, bodyFontStyle } from "../../models"
+import { colors, bodyFontStyle, buttonFontStyle } from "../../models"
 
 const LinkWrapper = styled.div`
   display: flex;
   align-items: center;
-  text-transform: uppercase;
-  margin-bottom: 40px;
+  border: 2.5px solid ${colors.white};
+  padding: 20px;
+  margin-right: 20px;
+  cursor: pointer;
 `
 
 const IconWrapper = styled.div`
@@ -17,8 +19,17 @@ const IconWrapper = styled.div`
 `
 
 const Text = styled.p`
-  ${bodyFontStyle}
+  ${buttonFontStyle}
 `
+
+const Arrow = styled.span`
+  font-size: 20px;
+  position: relative;
+  top: 0.05em;
+  margin-left: 5px;
+`
+
+// → ↦ ⇒ ⇛ ⇨
 
 interface WebsiteLinkProps {
   text: string
@@ -29,19 +40,18 @@ const WebsiteLink = ({ text, icon }: WebsiteLinkProps) => {
   return (
     <LinkWrapper>
       <IconWrapper>{icon}</IconWrapper>
-      <Text>{text}</Text>
+      <Text>
+        {text}
+        <Arrow>⇨</Arrow>
+      </Text>
     </LinkWrapper>
   )
 }
 
 const LinksWrapper = styled.div`
   display: flex;
-  // padding-top: 40px;
-  // padding-bottom: 40px;
   padding-left: 80px;
   display: flex;
-  // border-top: 5px solid ${colors.white};
-  // border-bottom: 5px solid ${colors.white};
   div:last-child {
     margin-bottom: 0;
   }
@@ -49,8 +59,8 @@ const LinksWrapper = styled.div`
 
 const ProjectDescription = styled.p`
   ${bodyFontStyle}
-  padding: 80px;
-  padding-top: 40px;
+  padding: 40px 80px;
+  background-color: ${colors.blue};
 `
 
 interface SectionLinksProps {

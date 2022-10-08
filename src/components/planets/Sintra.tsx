@@ -31,37 +31,39 @@ const Sintra = () => {
     }
   })
   return (
-    <e.group dispose={null} scale={2} ref={ref} theatreKey="Planet Sintra">
-      <mesh geometry={nodes.glassDarkBlue.geometry}>
-        <MaterialGlass.blueDark />
-      </mesh>
-      <mesh geometry={nodes.glassRed.geometry}>
-        <MaterialGlass.red />
-      </mesh>
-      <mesh geometry={nodes.blue.geometry}>
-        <MaterialBlue />
-      </mesh>
-      <mesh geometry={nodes.water.geometry}>
-        <MaterialWater />
-      </mesh>
-      <mesh geometry={nodes.glassGreen.geometry}>
-        <MaterialGlass.green />
-      </mesh>
-      <mesh geometry={nodes.yellow.geometry}>
-        <MaterialYellow />
-      </mesh>
-      <mesh geometry={nodes.glassWhite.geometry}>
-        <MaterialGlass.white />
-      </mesh>
-      <mesh geometry={nodes.white.geometry}>
-        <MaterialWhite />
-      </mesh>
-      <mesh geometry={nodes.green.geometry}>
-        <MaterialGreen />
-      </mesh>
-      <mesh geometry={nodes.red.geometry}>
-        <MaterialRed />
-      </mesh>
+    <e.group dispose={null} theatreKey="Planet Sintra">
+      <group position={[-45, -40, -45]} scale={12} ref={ref}>
+        <mesh geometry={nodes.glassDarkBlue.geometry}>
+          <MaterialGlass.blueDark />
+        </mesh>
+        <mesh geometry={nodes.glassRed.geometry}>
+          <MaterialGlass.red />
+        </mesh>
+        <mesh geometry={nodes.blue.geometry}>
+          <MaterialBlue />
+        </mesh>
+        <mesh geometry={nodes.water.geometry}>
+          <MaterialWater />
+        </mesh>
+        <mesh geometry={nodes.glassGreen.geometry}>
+          <MaterialGlass.green />
+        </mesh>
+        <mesh geometry={nodes.yellow.geometry}>
+          <MaterialYellow />
+        </mesh>
+        <mesh geometry={nodes.glassWhite.geometry}>
+          <MaterialGlass.white />
+        </mesh>
+        <mesh geometry={nodes.white.geometry}>
+          <MaterialWhite />
+        </mesh>
+        <mesh geometry={nodes.green.geometry}>
+          <MaterialGreen />
+        </mesh>
+        <mesh geometry={nodes.red.geometry}>
+          <MaterialRed />
+        </mesh>
+      </group>
     </e.group>
   )
 }

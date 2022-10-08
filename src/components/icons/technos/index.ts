@@ -1,1 +1,5 @@
 export { default as IconReact } from "./React"
+export { default as IconTypescript } from "./Typescript"
+export { default as IconRedux } from "./Redux"
+export { default as IconGatsby } from "./Gatsby"
+export { default as IconFramerMotion } from "./FramerMotion"

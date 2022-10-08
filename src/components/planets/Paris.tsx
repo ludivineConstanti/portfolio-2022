@@ -27,40 +27,36 @@ const Paris = () => {
   })
 
   return (
-    <e.group
-      dispose={null}
-      ref={ref}
-      position={[-3, -2, 0]}
-      scale={2}
-      theatreKey="Planet Paris"
-    >
-      <mesh geometry={nodes.Sphere006.geometry}>
-        <MaterialWhite />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_1.geometry}>
-        <MaterialWater />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_2.geometry}>
-        <MaterialBlue />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_3.geometry}>
-        <MaterialGreen />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_4.geometry}>
-        <MaterialPink />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_5.geometry}>
-        <MaterialGlass.blueLight />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_6.geometry}>
-        <MaterialGlass.white />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_7.geometry}>
-        <MaterialGlass.blueDark />
-      </mesh>
-      <mesh geometry={nodes.Sphere006_8.geometry}>
-        <MaterialGlass.blue />
-      </mesh>
+    <e.group dispose={null} theatreKey="Planet Paris">
+      <group ref={ref}>
+        <mesh geometry={nodes.Sphere006.geometry}>
+          <MaterialWhite />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_1.geometry}>
+          <MaterialWater />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_2.geometry}>
+          <MaterialBlue />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_3.geometry}>
+          <MaterialGreen />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_4.geometry}>
+          <MaterialPink />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_5.geometry}>
+          <MaterialGlass.blueLight />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_6.geometry}>
+          <MaterialGlass.white />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_7.geometry}>
+          <MaterialGlass.blueDark />
+        </mesh>
+        <mesh geometry={nodes.Sphere006_8.geometry}>
+          <MaterialGlass.blue />
+        </mesh>
+      </group>
     </e.group>
   )
 }

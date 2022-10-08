@@ -22,8 +22,15 @@ const Wrapper = styled.div`
   top: 0;
 `
 
-const CanvasComponent = () => {
+interface CanvasProps {
+  pixelSize: number
+  hue: number
+  saturation: number
+}
+
+const CanvasComponent = ({ pixelSize, hue, saturation }: CanvasProps) => {
   const [shaderState, setShadersState] = useState({
+    pixel: { pixelSize: 0 },
     hueSaturation: {
       hue: 0,
       saturation: 0,
@@ -34,6 +41,7 @@ const CanvasComponent = () => {
     studio.initialize()
 
     const shaders = demoSheet.object("Shaders", {
+      pixel: { pixelSize: core.types.number(0, { range: [0, 100] }) },
       hueSaturation: {
         hue: core.types.number(0, { range: [0, 1] }),
         saturation: core.types.number(0, { range: [-5, 5] }),
@@ -58,7 +66,12 @@ const CanvasComponent = () => {
         linear
       >
         <SheetProvider sheet={demoSheet}>
-          <Composer shadersState={shaderState} />
+          <Composer
+            shadersState={shaderState}
+            pixelSize={pixelSize}
+            hue={hue}
+            saturation={saturation}
+          />
           <Camera />
           <PlanetsAndStars />
         </SheetProvider>
