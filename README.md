@@ -1,4 +1,4 @@
-# portfolio-2022
+# 💻 Dev Portfolio 2022
 
 ![scrnli_11_02_2024_17-03-34](https://github.com/ludivineConstanti/portfolio-2022/assets/24965333/2d3a5168-7f2b-4c91-8554-ae1eb3f08832)
 
